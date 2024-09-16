@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ADA</title>
+    <link rel="stylesheet" href="index.css"> <!-- Certifique-se de que o caminho está correto -->
+    
+    <style>
+        /* Seu CSS existente */
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            margin-top: 20px;
+            color: #390545;
+        }
+
+        .box {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            width: 48%; /* Ajustar largura para caber duas caixas por linha */
+            margin-bottom: 20px;
+        }
+
+        .box img {
+            width: 50%; /* Metade da largura do contêiner */
+            height: auto;
+            margin-right: 20px;
+        }
+
+        .box .content {
+            width: 50%;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 40px;
+        }
+
+        /* Novo CSS para o header */
+        header {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            padding: 0 20px;
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+        }
+
+        .nav-links form {
+            display: flex;
+            margin-left: 20px;
+        }
+
+        .nav-links input[type="text"] {
+            padding: 5px;
+            font-size: 16px;
+        }
+
+        .nav-links button {
+            padding: 5px 10px;
+            font-size: 16px;
+        }
+
+        .nav-links ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            align-items: center;
+        }
+
+        .nav-links li {
+            margin-left: 20px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #390545;
+            font-size: 16px;
+        }
+
+        .nav-links a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+  <header>
+    <nav>
+      <img src="imagens/ada.png.png" alt="Logo" class="logo"> <!-- Adicione o caminho correto da imagem -->
+      <h1 class="title">ADA</h1>
+      <div class="nav-links">
+      
+        <ul>
+          <li><a href="index.html">INÍCIO</a></li>
+          <li><a href="cursos.html">BUSCAR</a></li>
+          <li><a href="cursos2.html">ADCIONAR E BUSCAR</a></li>
+        </ul>
+    </nav>
+    
+  </header>
+
+  <main>
+    <section>
+      <p>Se você está procurando por uma oportunidade para mudar de carreira, 
+        melhorar suas habilidades ou simplesmente aprender sobre tecnologia, 
+        a ADA é a plataforma certa para você. Com nossa abordagem inovadora e acessível, 
+        nosso site é o caminho perfeito para você ingressar no mundo da tecnologia e alcançar seus objetivos.
+      </p>
+    </section>
+    
+  </main>
+  
+  <div class="container">
+    <!-- Primeiro contêiner com imagem -->
+    <div class="box">
+      <img src="imagens/TFU.png" alt="Fundamentos da Tecnologia">
+      <div class="content">
+        <div><h3><a href="fundamentos2.html">FUNDAMENTOS DA TECNOLOGIA</a></div></h3>
+        <p>Esta trilha não apenas prepara você para desafios técnicos, mas também para pensar logicamente e resolver problemas de forma criativa. Ao final, você estará pronto para avançar para tópicos mais avançados e especializações, 
+          com uma base sólida que é a pedra fundamental da sua jornada na programação!</p>
+      
+      </div>
+    </div>
+
+    <!-- Segundo contêiner com imagem -->
+    <div class="box">
+      <img src="imagens/TF (2).png" alt="Front-End">
+      <div class="content">
+        <div><h3><a href="front.html">FRONT-END</a></div></h3>
+        <p>Ao seguir a trilha de front-end, os estudantes aprendem a criar interfaces intuitivas e responsivas, que se adaptam a diferentes tamanhos de tela e dispositivos. Também exploram frameworks e bibliotecas modernas, como React e Angular que facilitam o desenvolvimento de aplicações mais complexas e dinâmicas.</p>
+      </div>
+    </div>
+
+    <!-- Terceiro contêiner com imagem -->
+    <div class="box">
+      <img src="imagens/TBD.png" alt="Banco de Dados">
+      <div class="content">
+        <div><h3><a href="banco.html">BANCO DE DADOS</a></div></h3>
+        <p>Os alunos exploram conceitos fundamentais como modelagem de dados, normalização, consultas SQL (Structured Query Language) para bancos relacionais e técnicas para lidar com bancos de dados não-relacionais (NoSQL).</p>
+      </div>
+    </div>
+
+    <!-- Quarto contêiner com imagem -->
+    <div class="box">
+      <img src="imagens/TB.png" alt="Back-End">
+      <div class="content">
+        <div><h3><a href="back.html">BACK-END</a></div></h3>
+        <p>O conhecimento de bancos de dados, segurança da informação e controle de versão também é essencial para desenvolver sistemas robustos e proteger as informações dos usuários. A trilha de back-end é crucial para quem deseja criar a infraestrutura que dá suporte a aplicações modernas.</p>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <a>@2024</a>
+  </footer>
+
+</body>
+</html>

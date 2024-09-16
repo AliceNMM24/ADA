@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ADA</title>
+    <link rel="stylesheet" href="index.css">
+    <style>
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            margin-top: 20px;
+            color: #390545;
+        }
+
+        .box {
+            flex-basis: 30%; /* Largura flexível das caixas */
+            max-width: 30%; /* Limita a largura das caixas */
+            margin-bottom: 20px; /* Espaçamento entre as caixas */
+            text-align: center; /* Centraliza o conteúdo */
+        }
+
+        .box img {
+            width: 100%; /* Imagem ocupa toda a largura da caixa */
+            height: auto; /* Mantém a proporção da imagem */
+            margin-bottom: 15px; /* Espaçamento entre a imagem e o conteúdo */
+        }
+
+        .box .content {
+            padding: 15px; /* Adiciona padding ao redor do conteúdo */
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 40px;
+        }
+
+        @media (max-width: 768px) {
+            .box {
+                flex-basis: 45%; /* Ajusta a largura para telas menores */
+                max-width: 45%;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .box {
+                flex-basis: 100%; /* Para dispositivos móveis, as caixas ocupam 100% da largura */
+                max-width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+
+  <header>
+    <nav>
+      <img src="imagens/ada.png.png" alt="Logo" class="logo"> <!-- Certifique-se de que o caminho está correto -->
+      <h1 class="title">JAVA</h1>
+      <ul>
+
+        <li><a href="index.html">INÍCIO</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section>
+      <p>Nesta trilha, os alunos iniciam com os fundamentos da linguagem, incluindo sintaxe básica, variáveis, estruturas de controle, e funções. Em seguida, avançam para conceitos mais avançados como orientação a objetos, herança, polimorfismo, e interfaces. A trilha também cobre o desenvolvimento de aplicações web com Servlets e JSP, e a construção de aplicações corporativas usando frameworks como Spring e Hibernate.
+    </section>
+  </main>
+
+  <div class="container">
+    <!-- Primeiro contêiner com imagem acima -->
+    <div class="box">
+      <img src="imagens/Group 22.png" alt="HTML">
+      <div class="content">
+        <h3><a href="https://youtube.com/playlist?list=PLHz_AreHm4dkI2ZdjTwZA4mPMxWTfNSpR&si=ONwWpX2iL4mUeFb_">Curso de Java para Iniciantes - Grátis, Completo e com Certificado</a></h3>
+        <h3><a href="https://youtube.com/playlist?list=PLGxZ4Rq3BOBq0KXHsp5J3PxyFaBIXVs3r&si=C7K_v-Id0v8Zdyr_">Curso de Java Básico Gratuito com Certificado</a></h3>
+        <h3><a href="https://youtube.com/playlist?list=PL62G310vn6nHrMr1tFLNOYP_c73m6nAzL&si=28MVNoO86FquK7wD">Maratona Java - O maior curso Java em português.</a></h3>
+        <h3><a href="https://youtube.com/playlist?list=PLJ0AcghBBWSi6nK2CUkw9ngvwWB1gE8mL&si=xZsJSq4KemvEcxCf">CURSO DE JAVA - PROGRAMAÇÃO</a></h3>
+        <h3><a href="https://youtube.com/playlist?list=PLZPZq0r_RZOMhCAyywfnYLlrjiVOkdAI1&si=TWv7bYT1mdQmdh_J ">Java tutorial for beginners</a></h3>
+        <h3><a href="https://youtube.com/playlist?list=PLesCEcYj003Rfzs39Y4Bs_chpkE276-gD&si=cOMQmzj4G2tGaZvj  ">Curso de Java</a></h3>
+        <h3><a href="https://www.w3schools.com/java/default.asp">Java Tutorial</a></h3>
+        <h3><a href="https://aws.amazon.com/pt/what-is/java/">O que é Java?</a></h3>
+        <h3><a href="https://www.alura.com.br/artigos/java?srsltid=AfmBOorD3LGP3BnsxEvCgiprBKUUJvmETkOsef9xzUMgtjg2Eq8PKi7h ">Java: o que é, linguagem e um Guia para iniciar na tecnologia</a></h3>
+        <h3><a href="https://tecnoblog.net/responde/o-que-e-java-guia-para-iniciantes/ ">O que é Java? [Guia para iniciantes]</a></h3>
+        <h3><a href="https://zup.com.br/blog/o-que-e-java">O que é Java e por onde começar?</a></h3>
+        <h3><a href="https://www.remessaonline.com.br/blog/java-como-funciona-a-linguagem-e-principais-caracteristicas/">Java: como funciona a linguagem e principais características</a></h3>
+      </div>
+    </div>
+
+    <!-- Segundo contêiner com imagem acima -->
+    <div class="box">
+      <img src="imagens/Group 2222.png" alt="Front-End">
+      <div class="content">
+        <h3><a href="https://youtube.com/playlist?list=PLHz_AreHm4dkqe2aR0tQK74m8SFe-aGsY&si=UkwSHcRSZhK4JkKh  ">Curso de POO Java (Programação Orientada a Objetos)</a></h3>
+        <h3><a href="https://youtube.com/playlist?list=PLuYctAHjg89YNXAXhgUt6ogMyPphlTVQG&si=g-TkfTg-9MU8FNie">Curso Multithread, Paralelismo e Concorrência com Java</a></h3>
+        <h3><a href="https://youtube.com/playlist?list=PLfqMhTWNBTe3LtFWcvwpqTkUSlB32kJop&si=zz8ZIGbE-ZzUV3DX">Java & DSA Course for Placement</a></h3>
+        <h3><a href="fundamentos.html">Clique aqui</a></h3>
+        <h3><a href="https://www.java.com/pt-BR/download/help/whatis_java.html">O que é tecnologia Java e por que preciso dela?</a></h3>
+      </div>
+    </div>
+
+    <!-- Terceiro contêiner com imagem acima -->
+    <div class="box">
+      <img src="imagens/Group 22222222.png" alt="Banco de Dados">
+      <div class="content">
+        <h3><a href="https://youtube.com/playlist?list=PLx4x_zx8csUjFC5WWjoNUL7LOOD7LCKRW&si=x9VTZe_EY5y--ie1">Curso de Java</a></h3>
+        <h3><a href="https://youtube.com/playlist?list=PLKoyQ2N5NvRZrqmmcnO_l4ApxPZ4bAdVj&si=S7t3cGbnLgmjkjMf">Linguagem Java - Avançado</a></h3>
+        <h3><a href="https://www.ibm.com/br-pt/topics/java">O que é Java?</a></h3>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <a>@2024</a>
+  </footer>
+
+</body>
+</html>

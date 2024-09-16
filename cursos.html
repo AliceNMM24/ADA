@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="cursos.css"> <!-- Certifique-se de que o caminho está correto -->
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        form {
+            margin-bottom: 20px;
+        }
+        .course-list {
+            margin-top: 20px;
+        }
+        .course-item {
+            margin-bottom: 10px;
+        }
+        .course-item a {
+            text-decoration: none;
+            color: #007BFF;
+        }
+        .course-item a:hover {
+            text-decoration: underline;
+        }
+    </style>
+    <header>
+        <nav>
+          <img src="imagens/ada.png.png" alt="Logo" class="logo"> <!-- Adicione o caminho correto da imagem -->
+          <h1 class="title">ADA</h1>
+          <div class="nav-links">
+          
+            <ul>
+              <li><a href="index.html">INÍCIO</a></li>
+            </ul>
+    
+    
+        </nav>
+        
+      </header>
+</head>
+<body>
+    <h2>Buscar Cursos</h2>
+
+    <!-- Formulário para buscar cursos -->
+    <section>
+
+        <form id="search-form">
+            <input type="text" id="search-title" placeholder="Nome do Curso" required>
+            <button type="submit">Buscar</button>
+        </form>
+    </section>
+
+    <!-- Lista de cursos encontrados -->
+    <section>
+        <h2>Resultados da Busca</h2>
+        <div id="search-results" class="course-list"></div>
+    </section>
+
+    <!-- Inclua o JavaScript -->
+    <script src="cursos.js"></script>
+</body>
+</html>

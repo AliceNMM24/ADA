@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ADA</title>
+    <link rel="stylesheet" href="index.css">
+    <style>
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            margin-top: 20px;
+            color: #390545;
+        }
+
+        .box {
+            width: 30%; /* Ajustar largura para caber três caixas por linha */
+            margin-bottom: 20px; /* Espaçamento entre as caixas */
+            text-align: center; /* Centraliza o conteúdo */
+        }
+
+        .box img {
+            width: 100%; /* Imagem ocupa toda a largura da caixa */
+            height: auto; /* Mantém a proporção da imagem */
+            margin-bottom: 15px; /* Espaçamento entre a imagem e o conteúdo */
+        }
+
+        .box .content {
+            padding: 15px; /* Adiciona padding ao redor do conteúdo */
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 40px;
+        }
+    </style>
+</head>
+<body>
+
+  <header>
+    <nav>
+      <img src="imagens/ada.png.png" alt="Logo" class="logo"> <!-- Certifique-se de que o caminho está correto -->
+      <h1 class="title">TRILHA BANCO DE DADOS</h1>
+      <ul>
+      
+        <li><a href="index.html">INÍCIO</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section>
+      <p>A trilha de Banco de Dados em um site educacional de programação é voltada para ensinar como armazenar,
+         gerenciar e acessar dados de maneira eficiente em sistemas e aplicações. Nessa trilha, os alunos aprendem
+          a trabalhar com Sistemas de Gerenciamento de Banco de Dados (SGBDs) como MySQL, PostgreSQL, e MongoDB, explorando 
+          tanto bancos de dados relacionais quanto não-relacionais (NoSQL).
+      </p>
+    </section>
+  </main>
+
+  <div class="container">
+    <!-- Primeiro contêiner com imagem acima -->
+    <div class="box">
+      <img src="imagens/Group 100.png" alt="MySQL">
+      <div class="content">
+        <p>A trilha de MySQL em um site educacional de programação é focada em ensinar uma das ferramentas de banco de dados relacionais mais amplamente utilizadas no mundo. 
+          O MySQL é conhecido por sua simplicidade, alto desempenho e confiabilidade, sendo amplamente adotado em sites e aplicações de todos os tamanhos.</p>
+           <h3><a href="mySQL.html">Clique aqui</a></h3>
+      </div>
+    </div>
+
+    <!-- Segundo contêiner com imagem acima -->
+    <div class="box">
+      <img src="imagens/Group 101.png" alt="PostgreSQL">
+      <div class="content">
+        <p>A trilha de PostgreSQL em um site educacional de programação é dedicada a ensinar uma das mais poderosas e versáteis ferramentas de gerenciamento de banco de dados relacionais. 
+          O PostgreSQL é conhecido por sua robustez, confiabilidade e suporte a recursos avançados, como consultas complexas, transações, e extensões personalizáveis.</p>
+          <h3><a href="PostegreSQL.html">Clique aqui</a></h3>
+      </div>
+    </div>
+
+    <!-- Terceiro contêiner com imagem acima -->
+    <div class="box">
+      <img src="imagens/Group 102.png" alt="MongoDB">
+      <div class="content">
+        <p>A trilha de MongoDB em um site educacional de programação é voltada para ensinar o uso de um dos bancos de dados NoSQL mais populares e flexíveis da atualidade. O MongoDB é conhecido
+           por seu modelo de dados baseado em documentos, que permite armazenar informações em formato JSON de maneira ágil e escalável, ideal para aplicações que lidam com grandes volumes de dados 
+           não estruturados ou dinâmicos.</p>
+          <h3><a href="MongoDB.html">Clique aqui</a></h3>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <a>@2024</a>
+  </footer>
+
+</body>
+</html>

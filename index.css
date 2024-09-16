@@ -1,0 +1,174 @@
+/* Reseta margens e paddings padrão e define a fonte e cor de fundo */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #fce5e6;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* Garante que o corpo ocupe pelo menos a altura total da viewport */
+}
+
+/* Estiliza o cabeçalho */
+header {
+  background-color: #390545; /* Cor de fundo do header */
+  padding: 20px;
+  z-index: 1; /* Garante que o header esteja acima de outros elementos */
+}
+/* Estilo para deixar o h1 bem grande */
+h1 {
+  font-size: 60px; /* Tamanho da fonte bem grande */
+  font-weight: bold; /* Deixa o texto em negrito */
+  text-align: center; /* Centraliza o título na página */
+  color:  #E8A2A6; /* Cor do texto */
+}
+
+
+/* Estiliza a navegação */
+nav {
+  display: flex;
+  justify-content: space-between; /* Espaçamento entre logo e links */
+  align-items: center;
+}
+.nav-links {
+  display: flex;
+  align-items: center;
+}
+
+.nav-links section {
+  margin-right: 20px;
+}
+
+.nav-links li {
+  margin-left: 20px;
+}
+
+/* Estiliza o logo */
+.logo {
+  width: 100px; /* Ajustar o tamanho da logo conforme necessário */
+  height: auto;
+  margin-left: 50px; /* Corrigido para pixels */
+}
+
+/* Estiliza a imagem Group */
+Group {
+  width: 400px; /* Ajustar o tamanho da imagem conforme necessário */
+  height: auto;
+  margin-left: 50px; /* Corrigido para pixels */
+}
+
+/* Estiliza a lista de links no header */
+ul {
+  display: flex;
+  justify-content: flex-end; /* Alinha os itens na borda direita */
+  list-style-type: none; /* Remove os marcadores da lista */
+  margin: 10px 0; /* Corrigido para adicionar margem superior e inferior */
+  padding: 0;
+}
+
+/* Estiliza cada item da lista */
+ul li {
+  margin-left: 40px; /* Espaçamento entre LOGIN e INÍCIO */
+}
+
+/* Estiliza os links no header */
+ul li a {
+  background-color: hsl(356, 86%, 86%); /* Cor de fundo dos botões */
+  color: #390545; /* Cor do texto */
+  padding: 10px 30px;
+  text-decoration: none; /* Remove o sublinhado */
+  border-radius: 5px; /* Arredondar os cantos */
+  font-weight: bold;
+  list-style-type: none; 
+}
+
+/* Estiliza o hover sobre os links no header */
+ul li a:hover {
+  background-color: #E8A2A6; /* Cor de fundo ao passar o mouse */
+}
+
+/* Estiliza a área principal */
+main {
+  flex: 1; /* Permite que o conteúdo principal ocupe o espaço disponível */
+  display: flex;
+  justify-content: center; /* Centraliza horizontalmente o conteúdo */
+  align-items: center; /* Centraliza verticalmente se necessário */
+  height: auto; /* Ajusta a altura automaticamente */
+  text-align: center; /* Centraliza o texto */
+  padding: 10px;
+}
+
+/* Estiliza o parágrafo dentro da área principal */
+main p {
+  margin: 100px; /* Ajusta o espaçamento entre o parágrafo e os outros elementos do contêiner */
+}
+
+/* Estiliza os parágrafos dentro da seção */
+section p {
+  color: #390545; /* Cor do texto */
+  font-size: 23px; /* Tamanho da fonte */
+  max-width: 1500px; /* Define uma largura máxima para o texto */
+}
+
+/* Estiliza o contêiner principal */
+.container {
+  max-width: 1300px;
+  margin: 30px auto;
+  padding: 10px;
+}
+
+/* Estiliza as linhas de contêineres */
+.row {
+  display: flex; /* Exibindo os elementos de forma flexível (em linha) */
+  justify-content: flex-start; /* Distribuindo os contêineres com espaço entre eles */
+  flex-wrap: wrap; /* Permite que os contêineres se movam para uma nova linha, se necessário */
+  margin-bottom: 30px; /* Adiciona espaçamento entre as linhas */
+}
+
+/* Estiliza os contêineres */
+.col-md-6, .col-md-6 h2, .col-md-6 p {
+  width: 45%; /* Corrigido para 45% para caber duas colunas por linha */
+  margin: 10px 0; /* Ajusta o espaçamento vertical */
+  padding: 20px;
+  background-color: #E8A2A6;
+  border: 1px solid #ddd;
+ 
+}
+
+/* Estiliza os contêineres com largura menor */
+.col-md-3, .col-md-3 h2, .col-md-3 p {
+  width: 22%; /* Ajustado para manter espaçamento entre os contêineres */
+  margin-bottom: 60px; /* Espaçamento entre os contêineres verticalmente */
+  padding: 20px;
+  background-color: #E8A2A6;
+  border: 1px solid #390545;
+  text-align: center; /* Centraliza o texto dentro dos contêineres */
+
+}
+
+/* Estiliza os títulos */
+h2 {
+  font-family: Arial, sans-serif;
+  font-size: 24px;
+  color: #390545;
+}
+
+/* Estiliza os parágrafos */
+p {
+  font-family: Arial, sans-serif;
+  font-size: 20px; /* Corrigido para 20px */
+  color: #390545;
+}
+
+
+/* Estiliza o footer */
+footer {
+  background-color: #390545; /* Cor de fundo rosa */
+  text-align: center; /* Centraliza o texto */
+  padding: 10px 0; /* Espaçamento interno no topo e embaixo */
+  font-size: 18px; /* Tamanho do texto */
+  color: black; /* Cor do texto */
+  width: 100%; /* O footer ocupa 100% da largura da página */
+  bottom: 0; /* Posiciona o footer no final da página */
+  z-index: 100;
+}

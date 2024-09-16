@@ -1,0 +1,161 @@
+<!DOCTYPE html> <!-- Declara o tipo de documento e a versão do HTML (HTML5) -->
+<html lang="en"> <!-- Inicia o documento HTML e define o idioma como inglês -->
+<head>
+    <meta charset="UTF-8"> <!-- Define a codificação de caracteres como UTF-8 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Configura a viewport para responsividade em dispositivos móveis -->
+    <title>ADA</title> <!-- Define o título da página que aparece na aba do navegador -->
+    <link rel="stylesheet" href="cursos.css"> <!-- Link para o arquivo CSS externo que contém estilos -->
+    <style>
+        body {
+            font-family: Arial, sans-serif; /* Define a fonte padrão do corpo da página */
+            
+        }
+        form {
+            margin-bottom: 20px; /* Adiciona margem inferior de 20px aos formulários */
+        }
+        .course-list {
+            margin-top: 20px; /* Adiciona margem superior de 20px à lista de cursos */
+        }
+        .course-item {
+            margin-bottom: 10px; /* Adiciona margem inferior de 10px aos itens da lista de cursos */
+        }
+        .course-item a {
+            text-decoration: none; /* Remove o sublinhado dos links */
+            color: #007BFF; /* Define a cor do texto dos links */
+        }
+        .course-item a:hover {
+            text-decoration: underline; /* Adiciona sublinhado ao passar o mouse sobre os links */
+        }
+        button {
+            margin-left: 10px; /* Adiciona margem esquerda de 10px aos botões */
+        }
+        main{
+            margin: 20%;
+        }
+    </style>
+    <title>ADA</title> <!-- Título da página, o mesmo que o anterior (pode ser removido se duplicado) -->
+</head>
+<body>
+    <header>
+        <nav>
+            <img src="imagens/ada.png.png" alt="Logo" class="logo"> <!-- Imagem do logo com um caminho relativo; o texto alternativo é "Logo" -->
+            <h1 class="title">ADA</h1> <!-- Título principal da página -->
+            <div class="nav-links">
+                <ul> <!-- Lista não ordenada para os links de navegação -->
+                    <li><a href="index.html">INÍCIO</a></li> <!-- Link para a página inicial -->
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Adicionar Cursos -->
+    <section>
+        <h2>Adicionar Curso</h2> <!-- Subtítulo para a seção de adicionar cursos -->
+        <form id="add-course-form"> <!-- Formulário para adicionar novos cursos -->
+            <input type="text" id="course-name" placeholder="Nome do Curso" required> <!-- Campo de entrada para o nome do curso -->
+            <input type="url" id="course-link" placeholder="Link do Curso" required> <!-- Campo de entrada para o link do curso -->
+            <button type="submit">Adicionar Curso</button> <!-- Botão para enviar o formulário e adicionar o curso -->
+        </form>
+    </section>
+
+    <!-- Buscar Cursos -->
+    <section>
+        <h2>Buscar Cursos</h2> <!-- Subtítulo para a seção de buscar cursos -->
+        <form id="search-form"> <!-- Formulário para buscar cursos -->
+            <input type="text" id="search-title" placeholder="Nome do Curso" required> <!-- Campo de entrada para buscar cursos pelo nome -->
+            <button type="submit">Buscar</button> <!-- Botão para enviar o formulário de busca -->
+        </form>
+        <div id="search-results" class="course-list"></div> <!-- Div para exibir os resultados da busca -->
+    </section>
+
+    <!-- Lista de Cursos -->
+    <section>
+        <h2>Lista de Cursos</h2> <!-- Subtítulo para a lista de cursos -->
+        <div id="course-list" class="course-list"></div> <!-- Div para exibir a lista de cursos adicionados -->
+    </section>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {  // Adiciona um listener para executar o código quando o DOM estiver completamente carregado
+            const addCourseForm = document.getElementById('add-course-form'); // Obtém o formulário para adicionar cursos
+            const courseList = document.getElementById('course-list'); // Obtém o div onde a lista de cursos será exibida
+            const searchForm = document.getElementById('search-form'); // Obtém o formulário para buscar cursos
+            const searchResults = document.getElementById('search-results'); // Obtém o div onde os resultados da busca serão exibidos
+
+            // Atualizar a lista de cursos na tela
+            const updateCourseList = () => {
+                const courses = JSON.parse(localStorage.getItem('userCourses')) || []; // Obtém a lista de cursos do localStorage ou inicializa como um array vazio
+                courseList.innerHTML = courses.map((course, index) => `  <!-- Mapeia os cursos e cria um HTML para cada um -->
+                    <div class="course-item"> <!-- Container para um item de curso -->
+                        <a href="${course.link}" target="_blank">${course.name}</a> <!-- Link para o curso -->
+                        <button onclick="editCourse(${index})">Editar</button> <!-- Botão para editar o curso -->
+                        <button onclick="deleteCourse(${index})">Excluir</button> <!-- Botão para excluir o curso -->
+                    </div>
+                `).join(''); // Concatena todos os itens de curso em uma string HTML
+            };
+
+            // Adicionar um novo curso
+            addCourseForm.addEventListener('submit', (event) => {  // Adiciona um listener para o envio do formulário de adicionar curso
+                event.preventDefault(); // Impede o comportamento padrão do formulário (envio da página)
+                const name = document.getElementById('course-name').value; // Obtém o nome do curso do campo de entrada
+                const link = document.getElementById('course-link').value; // Obtém o link do curso do campo de entrada
+
+                const courses = JSON.parse(localStorage.getItem('userCourses')) || []; // Obtém a lista de cursos do localStorage ou inicializa como um array vazio
+                courses.push({ name, link });  // Adiciona o novo curso à lista
+                localStorage.setItem('userCourses', JSON.stringify(courses)); // Salva a lista atualizada no localStorage
+
+                document.getElementById('course-name').value = ''; // Limpa o campo de entrada do nome do curso
+                document.getElementById('course-link').value = ''; // Limpa o campo de entrada do link do curso
+
+                updateCourseList();  // Atualiza a lista de cursos exibida na tela
+            });
+
+            // Editar um curso
+            window.editCourse = (index) => { // Função para editar um curso, acessível globalmente
+                const courses = JSON.parse(localStorage.getItem('userCourses')) || []; // Obtém a lista de cursos do localStorage ou inicializa como um array vazio
+                const course = courses[index]; // Obtém o curso a ser editado com base no índice
+
+                const newName = prompt('Novo nome do curso:', course.name); // Solicita um novo nome para o curso
+                const newLink = prompt('Novo link do curso:', course.link); // Solicita um novo link para o curso
+
+                if (newName !== null && newLink !== null) { // Verifica se o usuário forneceu um novo nome e link
+                    courses[index] = { name: newName, link: newLink };  // Atualiza o curso na lista
+                    localStorage.setItem('userCourses', JSON.stringify(courses));  // Salva a lista atualizada no localStorage
+                    updateCourseList();  // Atualiza a lista de cursos exibida na tela
+                }
+            };
+
+            // Excluir um curso
+            window.deleteCourse = (index) => { // Função para excluir um curso, acessível globalmente
+                const courses = JSON.parse(localStorage.getItem('userCourses')) || []; // Obtém a lista de cursos do localStorage ou inicializa como um array vazio
+                courses.splice(index, 1);  // Remove o curso da lista com base no índice
+                localStorage.setItem('userCourses', JSON.stringify(courses));  // Salva a lista atualizada no localStorage
+                updateCourseList();  // Atualiza a lista de cursos exibida na tela
+            };
+
+            // Buscar cursos
+            searchForm.addEventListener('submit', (event) => {  // Adiciona um listener para o envio do formulário de busca
+                event.preventDefault(); // Impede o comportamento padrão do formulário (envio da página)
+                const query = document.getElementById('search-title').value.toLowerCase(); // Obtém o termo de busca e converte para minúsculas
+                const courses = JSON.parse(localStorage.getItem('userCourses')) || []; // Obtém a lista de cursos do localStorage ou inicializa como um array vazio
+
+                const results = courses.filter(course => course.name.toLowerCase().includes(query)); // Filtra os cursos que correspondem ao termo de busca
+                searchResults.innerHTML = ''; // Limpa os resultados da busca exibidos
+
+                if (results.length > 0) { // Verifica se há resultados para exibir
+                    results.forEach(course => { // Para cada resultado, cria um item na lista
+                        const courseItem = document.createElement('div'); // Cria um novo elemento div
+                        courseItem.classList.add('course-item'); // Adiciona a classe 'course-item' ao div
+                        courseItem.innerHTML = `<a href="${course.link}" target="_blank">${course.name}</a>`; // Define o conteúdo HTML do div
+                        searchResults.appendChild(courseItem); // Adiciona o novo item de curso aos resultados da busca
+                    });
+                } else {
+                    searchResults.innerHTML = '<p>Nenhum curso encontrado.</p>'; // Mensagem se nenhum curso for encontrado
+                }
+            });
+
+            // Inicializar a lista de cursos ao carregar a página
+            updateCourseList();  // Atualiza a lista de cursos exibida na tela quando a página é carregada
+        });
+    </script>
+</body>
+</html>
